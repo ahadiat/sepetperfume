@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Collection | Sepet Perfume</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="https://pbs.twimg.com/media/G9BESQDb0AMAoy2?format=png&name=240x240">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+
+<header>
+  <a href="index.html" class="logo">SEPET PERFUME</a>
+
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">HOME</a></li>
+    <li><a href="collection.html">COLLECTION</a></li>
+    <li><a href="gallery.html" class="active">GALLERY</a></li>
+    <li><a href="contact.html">CONTACT</a></li>
+  </ul>
+
+  <div class="lang-switch">
+    <button onclick="setLanguage('en')" id="btn-en" class="lang-btn active">EN</button>
+    <span>|</span>
+    <button onclick="setLanguage('ms')" id="btn-ms" class="lang-btn">BM</button>
+  </div>
+
+  <div class="burger" onclick="toggleMenu()">
+    <i class="fas fa-bars"></i>
+  </div>
+</header>
+
+<main>
+
+    <section id="products">
+        <div class="section-header">
+            <span data-en="The Essence of Luxury" data-ms="Intipati Kemewahan">The Essence of Luxury</span>
+            <h2 data-en="Best Sellers" data-ms="Jualan Terlaris">Best Sellers</h2>
+        </div>
+    
+        <div class="products-grid">
+            <div class="product-card">
+                <img src="https://pbs.twimg.com/media/G9A6UAVasAA23eg?format=jpg&name=medium" alt="A45S">
+                <h3>A45S</h3>
+                <div class="size-selector">
+                    <div class="size-btn">
+                        <input type="radio" name="a45s" id="a45s-10" value="10ml" data-price="15" checked onchange="updateUIPrice('a45s')">
+                        <label for="a45s-10">10ML</label>
+                    </div>
+                    <div class="size-btn">
+                        <input type="radio" name="a45s" id="a45s-30" value="30ml" data-price="50" onchange="updateUIPrice('a45s')">
+                        <label for="a45s-30">30ML</label>
+                    </div>
+                </div>
+                <span class="price-tag" id="price-a45s">RM 15.00</span>
+                <button data-en="Add To Cart" data-ms="Masuk Troli" class="add-cart-btn" onclick="addToCart('A45S', 'a45s')">Add To Cart</button>
+            </div>
+    
+            <div class="product-card">
+                <img src="https://pbs.twimg.com/media/G9A6MDkb0AAb8QB?format=jpg&name=medium" alt="NVX">
+                <h3>NVX</h3>
+                <div class="size-selector">
+                    <div class="size-btn">
+                        <input type="radio" name="nvx" id="nvx-10" value="10ml" data-price="15" checked onchange="updateUIPrice('nvx')">
+                        <label for="nvx-10">10ML</label>
+                    </div>
+                    <div class="size-btn">
+                        <input type="radio" name="nvx" id="nvx-30" value="30ml" data-price="50" onchange="updateUIPrice('nvx')">
+                        <label for="nvx-30">30ML</label>
+                    </div>
+                </div>
+                <span class="price-tag" id="price-nvx">RM 15.00</span>
+                <button data-en="Add To Cart" data-ms="Masuk Troli"  class="add-cart-btn" onclick="addToCart('NVX', 'nvx')">Add To Cart</button>
+            </div>
+    
+            <div class="product-card">
+                <img src="https://pbs.twimg.com/media/G9A6NoebQAAEmEt?format=jpg&name=medium" alt="RXZ">
+                <h3>RXZ</h3>
+                <div class="size-selector">
+                    <div class="size-btn">
+                        <input type="radio" name="rxz" id="rxz-10" value="10ml" data-price="15" checked onchange="updateUIPrice('rxz')">
+                        <label for="rxz-10">10ML</label>
+                    </div>
+                    <div class="size-btn">
+                        <input type="radio" name="rxz" id="rxz-30" value="30ml" data-price="50" onchange="updateUIPrice('rxz')">
+                        <label for="rxz-30">30ML</label>
+                    </div>
+                </div>
+                <span class="price-tag" id="price-rxz">RM 15.00</span>
+                <button data-en="Add To Cart" data-ms="Masuk Troli" class="add-cart-btn" onclick="addToCart('RXZ', 'rxz')">Add To Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="https://pbs.twimg.com/media/G9A6OkpbgAELeub?format=jpg&name=medium" alt="Y15">
+                <h3>Y15</h3>
+            
+                <div class="size-selector">
+                    <div class="size-btn">
+                        <input type="radio" name="y15" id="y15-10" value="10ml" data-price="15" checked onchange="updateUIPrice('y15')">
+                        <label for="y15-10">10ML</label>
+                    </div>
+                    <div class="size-btn">
+                        <input type="radio" name="y15" id="y15-30" value="30ml" data-price="50" onchange="updateUIPrice('y15')">
+                        <label for="y15-30">30ML</label>
+                    </div>
+                </div>
+            
+                <span class="price-tag" id="price-y15">RM 15.00</span>
+                <button data-en="Add To Cart" data-ms="Masuk Troli" class="add-cart-btn" onclick="addToCart('Y15', 'y15')">Add To Cart</button>
+            </div>
+            
+            <div class="product-card">
+                <img src="https://pbs.twimg.com/media/G9A6Pgob0AEpplZ?format=jpg&name=medium" alt="Type R">
+                <h3>Type R</h3>
+            
+                <div class="size-selector">
+                    <div class="size-btn">
+                        <input type="radio" name="typer" id="typer-10" value="10ml" data-price="15" checked onchange="updateUIPrice('typer')">
+                        <label for="typer-10">10ML</label>
+                    </div>
+                    <div class="size-btn">
+                        <input type="radio" name="typer" id="typer-30" value="30ml" data-price="50" onchange="updateUIPrice('typer')">
+                        <label for="typer-30">30ML</label>
+                    </div>
+                </div>
+            
+                <span class="price-tag" id="price-typer">RM 15.00</span>
+                <button data-en="Add To Cart" data-ms="Masuk Troli" class="add-cart-btn" onclick="addToCart('Type R', 'typer')">Add To Cart</button>
+            </div>
+            
+        </div>
+    </section>
+
+    <div id="cart-drawer" class="minimized">
+        <div class="cart-header" onclick="toggleCart()">
+            <span class="cart-icon">
+                <i class="fas fa-shopping-bag"></i>
+                <span class="cart-badge" id="cart-count">0</span>
+            </span>
+            <span class="cart-right">
+                <i class="fas fa-times" id="cart-close-icon"></i>
+            </span>
+              
+          
+    
+          
+        
+        </div>
+        <div class="cart-body" id="cart-items">
+            <p style="text-align:center; color:#999; margin-top:20px;">Your bag is empty.</p>
+        </div>
+        <div id="cart-footer" style="display:none; border-top:1px solid #eee;">
+            <div style="padding: 20px; display: flex; justify-content: space-between; font-weight: 600;">
+                <span>TOTAL</span>
+                <span id="cart-total">RM 0.00</span>
+            </div>
+            <a href="#" class="whatsapp-checkout" onclick="checkoutWhatsApp()">
+                CHECKOUT TO WHATSAPP
+            </a>
+        </div>
+    </div>
+
+</main>
+
+<footer class="site-footer">
+    <div class="footer-inner">
+  
+      <div class="logo-area-vertical">
+        <img src="https://pbs.twimg.com/media/G9BESQDb0AMAoy2?format=png&name=240x240" alt="Sepet Perfume Logo">
+        <span class="brand-name">Sepet Perfume by Zila</span>
+      </div>
+  
+      <div class="footer-right">
+        <div class="social-links-footer">
+          <a href="https://www.instagram.com/scentsbyzilaaa"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.facebook.com/share/1WPGwJH3uG"><i class="fab fa-facebook"></i></a>
+          <a href="https://www.tiktok.com/@youare11thebest"><i class="fab fa-tiktok"></i></a>
+        </div>
+  
+        <p class="footer-text">
+          &copy; 2026 SEPET PERFUME BY ZILA. ALL RIGHTS RESERVED.
+        </p>
+      </div>
+  
+    </div>
+  </footer>
+  
+
+<script src="main.js"></script>
+</body>
+</html>
