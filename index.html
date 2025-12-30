@@ -202,6 +202,32 @@ html {
   font-weight: 600;
 }
 
+.lang-switch {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: 20px;
+}
+
+.lang-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    color: #999;
+    transition: 0.3s;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.lang-btn.active {
+    color: var(--gold);
+    font-weight: 600;
+}
+
+/* Sembunyikan elemen mengikut bahasa (Opsional jika guna JS) */
+body.lang-ms [data-en] { display: none; }
+body.lang-en [data-ms] { display: none; }
     </style>
 </head>
 <body>
@@ -214,22 +240,55 @@ html {
         <li><a href="#gallery">GALLERY</a></li>
         <li><a href="#contact">CONTACT</a></li>
     </ul>
+    <div class="lang-switch">
+        <button onclick="setLanguage('en')" id="btn-en" class="lang-btn active">EN</button>
+        <span style="color: #ddd;">|</span>
+        <button onclick="setLanguage('ms')" id="btn-ms" class="lang-btn">BM</button>
+    </div>
     <div class="burger" onclick="toggleMenu()">
         <i class="fas fa-bars"></i>
     </div>
 </header>
 
 <section class="hero" id="home">
-    <span>PREMIUM SCENTS</span>
-    <h1>Sepet Perfume</h1>
-    <p>Handcrafted fragrances by Zila.</p>
-    <a href="#products" class="btn-shop">VIEW COLLECTION</a>
+    <span data-en="PREMIUM SCENTS" data-ms="WANGIAN PREMIUM">PREMIUM SCENTS</span>
+    <h1 data-en="Elegance in a Bottle" data-ms="Keanggunan Dalam Botol">Elegance in a Bottle</h1>
+    <p data-en="Handcrafted fragrances by Zila." data-ms="Wangian eksklusif adunan Zila.">Handcrafted fragrances by Zila.</p>
+    <a href="#products" class="btn-shop" data-en="VIEW COLLECTION" data-ms="LIHAT KOLEKSI">VIEW COLLECTION</a>
 </section>
+
+
+<section id="philosophy" style="background: var(--white); border-bottom: 1px solid #f0f0f0; padding: 100px 8%;">
+    <div class="section-header" style="text-align: center; margin-bottom: 40px;">
+        <span data-en="The Art of Scent" 
+              data-ms="Seni Haruman">The Art of Scent</span>
+        <h2 data-en="More Than Just a Fragrance" 
+            data-ms="Lebih Daripada Sekadar Bau">More Than Just a Fragrance</h2>
+    </div>
+    <div style="max-width: 800px; margin: 0 auto; text-align: center; padding: 0 20px;">
+        <p style="font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.2rem; color: var(--gold); margin-bottom: 20px;"
+           data-en='"A scent is a memory that never fades."'
+           data-ms='"Haruman adalah memori yang tidak akan pernah pudar."'>
+            "A scent is a memory that never fades."
+        </p>
+        
+        <p style="color: var(--gray); font-weight: 300; line-height: 2; letter-spacing: 1px; font-size: 0.95rem;"
+           data-en="At SEPET PERFUME, we believe that your fragrance is your invisible signature. Each bottle is a result of meticulous blending, inspired by the timeless elegance of French perfumery and the bold spirit of modern life. Whether it’s a morning at the office or an unforgettable night out, we craft scents that stay with you—leaving a trail of elegance long after you’ve left the room."
+           data-ms="Di SEPET PERFUME, kami percaya bahawa wangian anda adalah identiti unik yang tidak kelihatan. Setiap botol adalah hasil adunan teliti, diinspirasikan oleh keanggunan abadi seni wangian Perancis dan semangat moden yang berani. Sama ada untuk pagi di pejabat atau malam yang sukar dilupakan, kami menghasilkan bauan yang kekal bersama anda—meninggalkan jejak keanggunan lama selepas anda meninggalkan ruangan.">
+            At SEPET PERFUME, we believe that your fragrance is your invisible signature. 
+            Each bottle is a result of meticulous blending, inspired by the timeless elegance of French 
+            perfumery and the bold spirit of modern life. Whether it’s a morning at the office or an 
+            unforgettable night out, we craft scents that stay with you—leaving a trail of elegance 
+            long after you’ve left the room.
+        </p>
+    </div>
+</section>
+
 
 <section id="products">
     <div class="section-header">
-        <span>The Essence of Luxury</span>
-        <h2>Best Sellers</h2>
+        <span data-en="The Essence of Luxury" data-ms="Intipati Kemewahan">The Essence of Luxury</span>
+        <h2 data-en="Best Sellers" data-ms="Jualan Terlaris">Best Sellers</h2>
     </div>
 
     <div class="products-grid">
@@ -327,8 +386,10 @@ html {
 
 <section id="gallery">
     <div class="section-header">
-        <span>Visual Story</span>
-        <h2>The Atelier</h2>
+        <span data-en="Visual Story" 
+        data-ms="Kisah Visual">Visual Story</span>
+  <h2 data-en="The Atelier" 
+      data-ms="Atelier Kami">The Atelier</h2>
     </div>
     <div class="gallery-grid">
         <div class="gallery-item"><img src="https://pbs.twimg.com/media/G9A6XHNbAAABFDV?format=jpg&name=medium" alt="Gallery"></div>
@@ -340,8 +401,10 @@ html {
 
 <section id="contact">
     <div class="section-header">
-        <span>Get in Touch</span>
-        <h2>Contact Us</h2>
+        <span data-en="Get in Touch" 
+        data-ms="Terus Berhubung">Get in Touch</span>
+  <h2 data-en="Contact Us" 
+      data-ms="Hubungi Kami">Contact Us</h2>
     </div>
     <div class="contact-container">
         <div>
@@ -503,6 +566,32 @@ html {
         const msg = `Salam Zila, saya *${name}* ingin bertanya:%0a%0a${note}`;
         window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${msg}`, '_blank');
     }
+
+
+    function setLanguage(lang) {
+    // 1. Kemaskini butang aktif
+    document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+    document.getElementById(`btn-${lang}`).classList.add('active');
+
+    // 2. Cari semua elemen yang ada atribut data-en / data-ms
+    const elements = document.querySelectorAll('[data-ms]');
+
+    elements.forEach(el => {
+        const translation = el.getAttribute(`data-${lang}`);
+        if (translation) {
+            el.innerText = translation;
+        }
+    });
+
+    // 3. Simpan pilihan user dalam browser (Local Storage)
+    localStorage.setItem('preferredLang', lang);
+}
+
+// Jalankan bahasa pilihan bila website dibuka
+window.onload = () => {
+    const savedLang = localStorage.getItem('preferredLang') || 'en';
+    setLanguage(savedLang);
+};
 </script>
 
 </body>
